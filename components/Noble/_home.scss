@@ -1,0 +1,79 @@
+.wrapper, .wrapper-two {
+    @include transform(translate(0, 0));
+    @include transition(transform 0.3s ease);
+    width: 100%
+}
+.wrapper {
+    .hero {
+        margin-bottom: 22px
+    }
+    .box {
+        @include transition(height 0.7s ease);
+        @include transition(scale 0.2s ease-in-out);
+        width: 100%;
+        margin-bottom: 11px
+    }
+    img {
+        width: 100%;
+    }
+}
+
+@media(min-width:$mobile-wide) {
+    .wrapper .wrapper-two {
+        width: calc(50% - 11px);
+        margin-left: 11px;
+        float: left
+    }
+    .wrapper {
+        .hero {
+            padding-bottom: 0;
+            margin-top: 1px;
+            margin-bottom: 22px
+        }
+
+        .box {
+            &.large-left, &.small-right1, &.small-right2, &.large-right {
+                padding-bottom: 0;
+                height: auto;
+                float: left
+            }
+            &.large-left {
+                width: calc(50% - 11px);
+                margin-right: 11px
+            }
+            &.small-right1, &.small-right2 {
+                width: calc(50% - 11px);
+                margin-bottom: 11px
+            }
+            &.small-right1 {
+                margin-right: 11px
+            }
+            &.small-right2 {
+                margin-left: 11px
+            }
+            &.large-right {
+                width: 100%;
+                margin-top: 0
+            }
+        }
+    }
+}
+
+@media(min-width:$laptop) {
+    .wrapper {
+        .hero {
+            margin-top: 2px
+        }
+        .box.large-right {
+            margin-top: 11px
+        }
+    }
+}
+
+@media(min-width:$wrapper) {
+    .wrapper {
+        width: $wrapper;
+        margin-left: auto;
+        margin-right: auto
+    }
+}

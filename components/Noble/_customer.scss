@@ -1,0 +1,194 @@
+#customer-wrapper {
+    width: 95%;
+    margin: 0 auto;
+    h1 a {
+        color: $text-black;
+        &:hover {
+            text-decoration: none
+        }
+    }
+    p {
+        margin-bottom: 0
+    }
+    input[type=text], input[type=email], input[type=password], input[type=number] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px
+    }
+    input[type=submit] {
+        @include transition(all .5s ease);
+        margin-left: 0;
+        width: 100%
+    }
+    select {
+        padding: 10px;
+        display: block;
+        width: 100%;
+        margin-bottom: 10px
+    }
+    label.checkbox {
+        margin-top: 10px
+    }
+    .errors {
+        background: $error-red;
+        padding: 10px;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        ul {
+            list-style: none;
+            margin-bottom: 0;
+            padding-left: 0
+        }
+    }
+    h2 {
+        font-size: 26px;
+        text-transform: uppercase
+    }
+    h5 {
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 900
+    }
+    table {
+        max-width: 700px
+    }
+    a.submit {
+        margin-top: 20px;
+        margin-left: 0;
+        display: block;
+        text-align: center;
+        &:hover {
+            text-decoration: none
+        }
+    }
+}
+
+#customer_login, #customer-wrapper #recover-password, #customer-wrapper #create_customer, #customer-wrapper #address_form_new {
+    label {
+        width: 100%
+    }
+    .note {
+        float: right;
+        font-weight: normal;
+        font-size: 12px;
+        color: $text-black;
+        &:before {
+            content: "* "
+        }
+    }
+    .small {
+        font-size: 12px;
+        font-weight: normal
+    }
+    #forgot_password {
+        width: 100%;
+        text-align: right;
+        font-size: 12px;
+        margin-top: 5px;
+        a {
+            color: $text-black
+        }
+    }
+}
+#customer-wrapper {
+    .action_bottom {
+        margin-top: 20px
+    }
+    .customer_info {
+        @include wrap-stuff;
+        #customer_sidebar {
+            @include transition(all .5s ease);
+            width: 100%
+        }
+        #customer_orders {
+            @include transition(all .5s ease);
+            width: 100%;
+            a {
+                color: $text-black;
+                font-weight: 900
+            }
+        }
+    }
+    .cancelled {
+        width: 100%;
+        background: $error-red;
+        padding: 13px;
+        color: white;
+        margin-top: 10px;
+        h5 {
+            margin-top: 0
+        }
+    }
+    #order_address {
+        @include wrap-stuff;
+        margin-top: 10px;
+        h5 {
+            margin-top: 0
+        }
+        #order_payment, #order_shipping {
+            @include transition(all .5s ease);
+            width: 100%;
+            margin-bottom: 20px
+        }
+    }
+    table#order_details {
+        max-width: 100%;
+        margin-top: 10px;
+        tbody {
+            border-bottom: 1px solid $medium-grey
+        }
+        a {
+            color: $text-black;
+            font-weight: 900
+        }
+    }
+}
+
+@media(min-width:$mobile-wide) {
+    .cancelled {
+        width: calc(50% - 10px) !important
+    }
+    #order_address {
+        #order_payment, #order_shipping {
+
+            margin-bottom: 0;
+            width: calc(50% - 10px) !important;
+            margin-right: 10px;
+            border: 1px solid $medium-grey;
+            padding: 10px
+        }
+        #order_shipping {
+            margin-right: 0;
+            margin-left: 10px
+        }
+    }
+}
+
+@media(min-width:$tablet) {
+    .customer_info {
+        #customer_sidebar {
+            width: calc(40% - 10px) !important;
+            margin-right: 10px
+        }
+        #customer_orders {
+            width: calc(60% - 10px) !important;
+            margin-left: 10px
+        }
+    }
+    #customer-wrapper {
+        #customer_login, #recover-password, #create_customer, #address_form_new {
+            width: 50%;
+            input[type=submit] {
+                width: 50%
+            }
+        }
+    }
+}
+
+@media(min-width:$wrapper) {
+    #customer-wrapper {
+        width: 100%;
+        margin: 0
+    }
+}

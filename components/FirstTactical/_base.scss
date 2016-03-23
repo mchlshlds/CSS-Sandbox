@@ -1,0 +1,78 @@
+h1, h2, h3, h4, h5 {
+    font-family: 'FuturaStd-CondensedBold', Arial, sans-serif;
+    color: $text-dark-grey;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: 60px;
+}
+h2 {
+    font-size: 42px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 14px;
+}
+p {
+    color: $text-dark-grey;
+    font-size: 14px;
+}
+input {
+
+}
+button {
+    background: $light-blue none repeat scroll 0 0;
+    border-bottom: 4px solid $dark-blue;
+    color: $white;
+    cursor: pointer;
+    display: block;
+    font-family: "FuturaStd-Heavy",Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-size: 17px;
+    letter-spacing: 1px;
+    min-height: 50px;
+    padding: 12px 10px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 100%;
+    .arrow {
+        background: url(html_templates/images/btn_arrow_right_white.png) no-repeat right center;
+        padding-right: 20px;
+    }
+    .outline {
+        .arrow {}
+    }
+    .grey {
+        .arrow {}
+    }
+}
+textarea {
+
+}
+select {
+
+}
+table {
+
+}
+tbody {
+
+}
+td {
+
+}
+tr {
+
+}
+th {
+
+}
+tfoot {
+
+}
+

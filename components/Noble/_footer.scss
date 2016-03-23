@@ -1,0 +1,131 @@
+// Footer styles
+footer {
+    @include outer-container($wrapper);
+    @include pad(20px);
+    h4 {
+        font-size: 21px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+    }
+
+    ul li a, p {
+        font-size: 16px;
+        letter-spacing: 0.7px;
+        color: $text-grey;
+        padding-top: 5px;
+        line-height: 1.9em;
+        font-weight: 300;
+    }
+
+    @include media($tablet) {
+        h4 {
+            font-size: 21px;
+            letter-spacing: 1px;
+        }
+        ul li a, p {
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+    }
+    @media (min-width: 320px) and (max-width: 699px) {
+        .links {
+            @include span-columns(6);
+            &:nth-of-type(even) {
+                @include omega;
+            }
+        }
+    }
+
+    @media (min-width: $tablet) {
+        .links {
+            @include span-columns(2);
+        }
+    }
+
+    .newsletter {
+        @include span-columns(12);
+        @include omega;
+        form {
+            input.newsletter-input, input.newsletter-button {
+                padding: 10px 20px;
+                letter-spacing: 1px;
+                border: 0;
+            }
+            input.newsletter-input {
+                width: 100%;
+                background: #D8D8D8;
+            }
+            input.newsletter-button {
+                width: 100%;
+                background: #4A4A4A;
+                color: #F6F6F7;
+                text-transform: uppercase;
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            @include media(min-width 400px max-width 699px) {
+                input.newsletter-input {
+                    width: 58%;
+                }
+                input.newsletter-button {
+                    width: 40%;
+                }
+            }
+            @include media($wrapper) {
+                input.newsletter-input {
+                    width: 58%;
+                }
+                input.newsletter-button {
+                    width: 40%;
+                }
+            }
+        }
+        @include media($tablet) {
+            @include span-columns(4);
+        }
+    }
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    @include outer-container(100%);
+    background: #222222;
+    color: $text-grey;
+    font-weight: lighter;
+    padding: 5px 0;
+    .inner-wrapper {
+        .logo {
+            display: none;
+        }
+        .copyright {
+            @include span-columns(12);
+            p {
+                text-align: center;
+                font-size: em(16);
+                letter-spacing: 1px;
+                padding-top: 5px
+            }
+            a {
+                color: #DADADA
+            }
+        }
+        @include media(800px) {
+            @include outer-container($wrapper);
+            @include pad(0 20px);
+            .logo {
+                display: block;
+                @include span-columns(4);
+                img {
+                    padding-top: 1px;
+                }
+            }
+            .copyright {
+                @include span-columns(8);
+                p {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,510 @@
+main {
+    @include wrap-stuff();
+    nav {
+        @include order(1);
+    }
+    header {
+        @include order(2);
+    }
+    section.message {
+        @include order(3);
+    }
+    /*section.wrapper {
+        @include order(4);
+    }
+    footer {
+        @include order(5);
+    }*/
+}
+
+nav {
+    width: 260px;
+    min-height: 100%;
+    padding: 30px;
+    position: absolute;
+    background: $text-black;
+    color: $text-white;
+    z-index: 1;
+    @include transform(translate(-260px, 0));
+    @include transition(transform 0.3s ease);
+    a {
+        color: inherit;
+        &#close {
+            float: right;
+            position: relative;
+            top: -20px;
+            right: -10px;
+            font-size: 20px;
+            font-family: Lucida Sans Unicode, sans-serif;
+            font-weight: lighter;
+            color: $text-white;
+        }
+        &:focus, &:hover {
+            text-decoration: none;
+            color: $text-white;
+        }
+    }
+    ul li a {
+        font-weight: normal;
+        text-transform: capitalize;
+        color: #888;
+        line-height: 25px;
+    }
+    & > ul {
+        margin-top: 15px;
+        & > li {
+            margin-bottom: 20px;
+            & > a {
+                color: $light-grey;
+                text-transform: uppercase;
+                line-height: 40px
+            }
+        }
+    }
+    &.open {
+        @include transform(translate(0, 0));
+    }
+}
+
+section.message {
+    height: 25px;
+    width: 100%;
+    background: #c6ab76;
+    p {
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: #fff;
+        line-height: 25px;
+        text-align: center;
+        text-transform: uppercase
+    }
+}
+
+header {
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include align-items(center);
+    height: 40px;
+    background: #fff;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .header-left, .header-right {
+        width: 35%;
+    }
+    .header-right {
+        text-align: right;
+    }
+    .header-center {
+        width: 30%;
+        text-align: center
+    }
+    .brand {
+        width: 85%;
+        min-width: 90px;
+        max-width: 216px
+    }
+    #cart img {
+        width: 28px;
+        height: auto
+    }
+    i {
+        font-size: 20px;
+        line-height: 36px !important
+    }
+    a {
+        color: inherit;
+        &:focus, &:hover, &:active {
+            color: inherit;
+            text-decoration: none;
+        }
+        &#menu {
+            font-size: 20px
+        }
+    }
+    .shopping-bag img {
+        margin-top: 40%;
+        height: 18px
+    }
+    .dropdown, .dropup {
+        position: relative;
+        display: inline-block
+    }
+
+    .dropdown-menu {
+        min-width: 96px;
+        padding: 5px 11px;
+        font-size: 12px;
+        li {
+            margin-bottom: 10px;
+            &:last-of-type {
+                margin-bottom: 5px
+            }
+        }
+    }
+    .logout {
+        display: inline-block;
+        vertical-align: top;
+        text-transform: uppercase;
+        font-size: 12px
+    }
+}
+
+.search {
+    input[type="search"] {
+        @include transition(all .5s);
+        margin-top: 6px;
+        height: 40px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        display: inline-block;
+        font-weight: 100;
+        border: 0;
+        outline: 0;
+        color: inherit;
+        padding: 0 10px;
+        width: 0;
+        position: absolute;
+        top: 0;
+        right: 52px;
+        background: url(#{'{{ "search-icon-white.png" | asset_url }}'}) right center no-repeat;
+        background-size: 16px;
+        z-index: 3;
+        cursor: pointer;
+        &:focus {
+            width: 198px;
+            z-index: 1;
+            border-bottom: 1px solid #BBB;
+            background: white url(#{'{{ "search-icon.png" | asset_url }}'}) 93% center no-repeat;
+            background-size: 14px;
+            cursor: text;
+            color: $black;
+            -webkit-border-radius: 4em;
+            -moz-border-radius: 4em;
+            border-radius: 4em;
+        }
+    }
+    input[type="submit"] {
+        @include transition(opacity .5s ease);
+        height: 55px;
+        width: 30px;
+        display: inline-block;
+        color: red;
+        float: right;
+        background: url(#{'{{ "search-icon-white.png" | asset_url }}'}) center center no-repeat;
+        text-indent: -10000px;
+        border: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        cursor: pointer;
+        opacity: 1;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+@media(min-width:$mobile) {
+    header {
+        height: 55px;
+        i {
+            font-size: 24px;
+            line-height: 50px !important
+        }
+        a#menu {
+            font-size: 21px
+        }
+        .shopping-bag img {
+            margin-top: 60%;
+            height: 20px
+        }
+    }
+}
+
+@media(min-width:$mobile-wide) {
+    nav ul li a {
+        line-height: 28px
+    }
+    nav>ul {
+        font-size: 16px
+    }
+    header {
+        height: 60px;
+        i {
+            font-size: 24px;
+            line-height: 60px !important
+        }
+        a#menu {
+            font-size: 24px
+        }
+        .shopping-bag img {
+            margin-top: 60%;
+            height: 22px
+        }
+    }
+
+    section.message {
+        height: 30px;
+        p {
+            font-size: 13px;
+            line-height: 30px
+        }
+    }
+}
+
+@media(min-width:$tablet) {
+    main nav {
+        @include order(2);
+        margin-bottom: 0
+    }
+    main header {
+        @include order(1);
+        width: 95%;
+        height: 70px;
+        margin: 7px auto 0 auto;
+        #cart {
+            position: relative;
+            top: -15px;
+            img {
+                width: 32px;
+                height: auto
+            }
+        }
+        .mc-left h4, .mc-right {
+            display: block
+        }
+        .header-right {
+            margin-top: 10px
+        }
+        .logout {
+            margin-top: 16px;
+            margin-right: 20px
+        }
+    }
+    #flag, #cart, #phone {
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        display: inline-block;
+        margin: 0;
+        padding: 6px 4px;
+        position: relative;
+        font-size: 12px;
+        cursor: pointer
+    }
+    #phone h5 {
+        margin-top: 2px;
+        font-size: 16px
+    }
+    .drop-down-indicator:after {
+        content: "";
+        color: #47443d;
+        font-size: 30px;
+        font-weight: 100;
+        line-height: 0;
+        position: relative;
+        left: -6px;
+        top: 15px
+    }
+    #drawer {
+        width: 100%;
+        min-height: 0;
+        padding: 0;
+        margin: 0
+    }
+    a#menu {
+        display: none
+    }
+    .shopping-bag img {
+        margin-top: 75%
+    }
+    #cart img {
+        margin-top: -15px
+    }
+    .noble-link {
+        margin-top: 10px;
+        font-size: 13px
+    }
+    .search {
+        display: inline-block;
+        width: 180px;
+        input[type=search] {
+            @include transition(all 0.5s);
+            margin-top: 0;
+            height: 50px;
+            position: relative;
+            bottom: -2px;
+            margin-right: 15px;
+            font-size: 16px;
+            background: url(#{'{{ "search-icon.png" | asset_url }}'}) right center no-repeat;
+            border: 0;
+            width: 30px;
+            padding: 10px 10px 10px 32px;
+            float: right;
+            right: 0;
+            &:hover {
+                cursor: pointer
+            }
+            &:focus {
+                width: 180px;
+                background: #ebebeb url(#{'{{ "search-icon.png" | asset_url }}'}) 93% center no-repeat;
+                background-size: 20px;
+                border: 0;
+                padding: 10px 40px 10px 20px;
+                cursor: text;
+                outline: 0;
+                -webkit-border-radius: 10em;
+                -moz-border-radius: 10em;
+                border-radius: 10em
+            }
+        }
+        &.drawer {
+            display: none
+        }
+    }
+    nav {
+        @include transform(translate(0, 0));
+        @include transition(transform 0.6s ease);
+        background: 0;
+        position: relative;
+        text-align: center;
+        font-size: 0;
+        a {
+            color: inherit
+        }
+        & > ul {
+            @include display(flex);
+            @include justify-content(center);
+            width: 100%;
+            background: #fff;
+            margin-top: 0;
+            margin-bottom: 0;
+
+            & > li {
+                @include align-items(center);
+                @include transition(all 0.2s ease);
+                margin: 0;
+                display: inline-block;
+                &:hover {
+                    @include transition(all 0.2s ease);
+                    background: $dk-brown;
+                    padding: 0;
+                    & > a {
+                        @include transition(all 0.2s ease);
+                        color: $light-grey;
+                        &:after, &.drop-down-indicator:after {
+                            @include transition(all 0.2s ease);
+                            color: $light-grey
+                        }
+                    }
+                }
+                & > a {
+                    color: $text-black;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    margin: 0;
+                    padding: 2px 12px;
+                    position: relative;
+                    font-size: 12px;
+                    &#close {
+                        display: none;
+                    }
+                }
+            }
+            li:hover > .main-nav-menu {
+                display: block
+            }
+            .main-nav-menu {
+                display: none;
+                position: absolute;
+                background: $dk-brown;
+                width: 100%;
+                left: 0;
+                margin: 0 auto;
+                text-align: left;
+                padding: 30px;
+                &.no-dropdown-image {
+                    width: 250px !important;
+                    left: auto !important;
+                    .mc-left {
+                        width: 100% !important
+                    }
+                }
+                li.outerwear, li.work-boots {
+                    margin-bottom: 10px
+                }
+                li.belts, li.boot-socks {
+                    border-top: 1px solid #888;
+                    padding-top: 10px;
+                    margin-right: 50px;
+                }
+            }
+        }
+    }
+
+    section.menu-container {
+        @include wrap-stuff;
+        h4 a {
+            margin-top: 0;
+            color: #fefefe;
+            font-size: 24px
+        }
+        .mc-left {
+            width: 25%
+        }
+        .mc-right {
+            width: 75%;
+            padding-left: 30px;
+            border-left: 1px solid #888;
+        }
+    }
+
+    section.message {
+        width: $wrapper;
+        margin-left: auto;
+        margin-right: auto;
+        p {
+            font-size: 16px;
+            font-weight: bold
+        }
+    }
+}
+
+@media(min-width:800px) {
+    .drop-down-indicator:after {
+        content: " \02C7"
+    }
+    #flag {
+        margin: 0 !important
+    }
+}
+
+@media(min-width:$laptop) {
+    #phone h5 {
+        font-size: 18px
+    }
+    #flag, #cart, #phone {
+        padding: 6px 10px
+    }
+    nav ul .main-nav-menu {
+        width: 80%;
+        left: 10%
+    }
+}
+
+@media(min-width:$wrapper) {
+    nav#drawer, main header {
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto
+    }
+    nav>ul>li>a {
+        margin: 0;
+        padding: 2px 16px;
+        font-size: 13px
+    }
+}

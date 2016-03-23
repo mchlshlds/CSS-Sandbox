@@ -1,0 +1,164 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.bottom-wide {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .bottom-wide .one-third {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    width: 100%; }
+
+.account-message {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 16px;
+  background: #46443f;
+  color: white; }
+
+#customer_login, #recover-password, #create_customer, #address_form_new {
+  margin: 0 auto; }
+
+@media (min-width: 550px) {
+  .bottom-wide .one-third {
+    width: calc((100% - 22px) / 2);
+    margin: 0 11px; }
+    .bottom-wide .one-third:first-child {
+      margin-left: 0; }
+    .bottom-wide .one-third:nth-child(2) {
+      margin-right: 0; }
+    .bottom-wide .one-third:last-child {
+      display: none; } }
+@media (min-width: 700px) {
+  .bottom-wide .one-third {
+    width: calc((100% - 44px) / 3); }
+    .bottom-wide .one-third:first-child {
+      margin-left: 0; }
+    .bottom-wide .one-third:nth-child(2) {
+      margin-right: 10px; }
+    .bottom-wide .one-third:last-child {
+      display: block;
+      margin-right: 0; } }
+#customer-wrapper {
+  min-height: 400px; }
+  #customer-wrapper a.submit {
+    margin-top: 8px;
+    font-weight: normal !important;
+    text-decoration: none !important;
+    display: inline-block;
+    text-align: center;
+    width: 120px; }
+
+.events {
+  width: 95%;
+  margin: 0 auto; }
+  .events .right-side {
+    display: none; }
+    .events .right-side img {
+      margin-bottom: 5px; }
+
+@media (min-width: 700px) {
+  .events .left-side {
+    width: 65%;
+    margin-right: 5%;
+    float: left; }
+  .events .right-side {
+    width: 30%;
+    display: inline-block; } }
+@media (min-width: 1200px) {
+  .events {
+    width: 100%; } }
+.co-op {
+  width: 95%;
+  margin: 0 auto; }
+  .co-op .advert {
+    display: none; }
+  .co-op h2 {
+    font-size: 21px;
+    text-transform: uppercase;
+    font-weight: 600 !important; }
+  .co-op a {
+    text-decoration: underline;
+    font-weight: bold; }
+
+@media (min-width: 700px) {
+  .co-op .advert {
+    width: 100%;
+    text-align: right;
+    display: block !important;
+    margin-bottom: 10px; }
+    .co-op .advert img {
+      max-width: 250px; }
+  .co-op .left-side {
+    width: 65%;
+    margin-right: 5%;
+    float: left; }
+  .co-op .right-side {
+    width: 30%;
+    display: inline-block; } }
+@media (min-width: 1200px) {
+  .co-op {
+    width: 100%; } }
+.media {
+  width: 95%;
+  margin: 0 auto; }
+  .media ul {
+    list-style: none;
+    padding-left: 0; }
+    .media ul li {
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      transition: all 0.5s;
+      width: 50%;
+      display: inline-block;
+      float: left;
+      text-align: center;
+      margin-bottom: 20px; }
+      .media ul li a {
+        color: #47443d;
+        text-decoration: none; }
+      .media ul li .media-name {
+        font-weight: bold; }
+      .media ul li .media-size {
+        color: #9b9b9b;
+        font-size: 11px; }
+    .media ul img {
+      max-width: 95px; }
+
+@media (min-width: 550px) {
+  .media ul li {
+    width: 33.33%; } }
+@media (min-width: 700px) {
+  .media ul li {
+    width: 25%; } }
+@media (min-width: 1000px) {
+  .media ul li {
+    width: 20%; } }
+.pre-book {
+  width: 95%;
+  margin: 20px auto; }
+  .pre-book img {
+    max-width: 598px; }
+
+@media (min-width: 1200px) {
+  .pre-book {
+    width: 100%; } }
+
+/*# sourceMappingURL=noble_dealers.css.map */

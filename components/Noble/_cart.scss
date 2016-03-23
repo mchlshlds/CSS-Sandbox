@@ -1,0 +1,96 @@
+.cart {
+    width: 95%;
+    margin: 0 auto;
+    min-height: 400px;
+    h1 {
+        font-size: 30px;
+        text-transform: uppercase
+    }
+    #cartform {
+        a {
+            color: $text-black
+        }
+        input[type="text"] {
+            width: 22px;
+            padding: 5px
+        }
+        #basket {
+            width: 100%;
+            tr {
+                border-bottom: 1px solid $medium-grey
+            }
+            th {
+                background: $dk-brown;
+                color: $light-grey
+            }
+            th, td {
+                padding: 6px 4px;
+                vertical-align: top;
+                &.thumb {
+                    @include transition(all .5s ease);
+                    width: 30px
+                }
+            }
+        }
+        #basket-right {
+            @include transition(all .5s ease);
+            width: 100%;
+            h3 {
+                text-align: right
+            }
+            .options {
+                margin-top: 20px;
+                float: right;
+                width: 100%;
+                .payment-method {
+                    text-align: center;
+                    border-bottom: 1px solid $medium-grey;
+                    margin-bottom: 15px
+                }
+                .more-checkout {
+                    text-align: center
+                }
+            }
+        }
+        input[type="submit"] {
+            width: calc(50% - 5px);
+            float: left;
+            margin-right: 5px;
+            margin-left: 0;
+            &:last-of-type {
+                margin-right: 0;
+                margin-left: 5px
+            }
+        }
+    }
+}
+
+@media(min-width:$tablet) {
+    #basket td.thumb {
+        width: 80px !important
+    }
+    #basket-right {
+        width: 60% !important;
+        float: right
+    }
+}
+
+@media(min-width:$laptop) {
+    #basket-right {
+        width: 30% !important;
+        .options {
+            width: 50% !important
+        }
+    }
+}
+
+@media(min-width:$wrapper) {
+    .cart {
+        width: 100%;
+        margin: 0;
+        #cartform #basket tr {
+            border-right: 1px solid $medium-grey;
+            border-left: 1px solid $medium-grey
+        }
+    }
+}
