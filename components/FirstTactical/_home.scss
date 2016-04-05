@@ -1,10 +1,14 @@
+// Home Page Styles
 #home {
-    background: #fff none repeat scroll 0 0;
+    background: $white none repeat scroll 0 0;
     position: relative;
-    width: calc(100% - 10px);
     margin: 0 auto;
     z-index: 1;
-    .hero {
+    width: calc(100% - 10px);
+    max-width: $wrapper;
+
+    // Hero Slider Defaults
+    section.hero {
         position: relative;
         .slider {
             li {
@@ -19,48 +23,350 @@
                     position: absolute;
                     top: 0;
                     z-index: 555;
-                    h3 {
+                    h3 {}
+                    h2 {}
+                    p {}
+                    button {}
+                }
+            }
+        }
+    }
 
-                    }
-                    h2 {
-                    }
-                    p {
 
+    // Professions Section
+    section.professions {
+        text-align: center;
+        padding-top: 50px;
+        color: $text-dark-grey;
+        h2 {
+            font-family: $avenir-regular;
+            font-size: 32px;
+        }
+        p {
+            font-size: 17px;
+        }
+        ul {
+            margin: 20px auto 60px;
+            width: 100%;
+            max-width: 525px;
+            li {
+                display: inline-block;
+                width: 32%;
+                border-left: 1px solid $light-grey;
+                font-size: 12px;
+                text-transform: uppercase;
+                &:first-child {
+                    border: none;
+                }
+                a {
+                    font-family: $futura-heavy;
+                    img {
+                        display: block;
+                        margin: 0 auto 16px;
                     }
-                    button {
-
+                    .arrow {
+                        background: url(html_templates/images/btn_arrow_right_grey.png) bottom left no-repeat;
+                        width: 6px;
+                        height: 12px;
+                        margin-left: 7px;
+                        display: inline-block;
                     }
                 }
             }
         }
     }
-    .professions {
+
+
+    // Articles Section
+    section.articles {
+        @include wrap-stuff;
+        color: $text-dark-grey;
+        article {
+            width: 100%;
+            margin-left: 0;
+            text-align: center;
+            background: $light-grey;
+            margin-bottom: 10px;
+            @include transition(width 0.3s ease);
+            @media (min-width: $tablet) {
+                width: calc((100% - 18px) / 2);
+                margin-left: 9px;
+                &:first-child {
+                    margin-left: 0;
+                    margin-right: 9px;
+                }
+            }
+            img {
+                width: 100%;
+            }
+            div {
+                margin: 0 auto;
+                padding: 5% 0;
+                width: 90%;
+                @media (min-width: $tablet) {
+                    width: 70%;
+                }
+                h4 {
+                    font-family: $avenir-medium;
+                    font-size: 16px;
+                    margin-bottom: 12px;
+                }
+                h3 {
+                    font-family: $futura-heavy;
+                    font-size: 27px;
+                    letter-spacing: 1px;
+                    margin-bottom: 17px;
+                }
+                p {
+                    font-size: 15px;
+                    line-height: 18px;
+                }
+            }
+        }
+    }
+
+
+    // Featured Products Section
+    section.featured {
+        margin-top: 60px;
         text-align: center;
-        padding-top: 50px;
         h2 {
-           font-family: 'AvenirNext-Regular', Arial, "Helvetica Neue", Helvetica, sans-serif;
-            font-size: 32px;
+            font-family: $avenir-ultra-light;
+            font-size: 28px;
+            margin-bottom: 26px;
         }
-        ul {
-            @include
+        & > a {
+            background: url(html_templates/images/btn_arrow_right_blue.png) right 3px no-repeat;
+            color: $light-blue;
+            float: none;
+            font-family: $avenir-ultra-light;
+            margin-top: -30px;
+            font-size: 13px;
+            padding-right: 14px;
+            text-transform: uppercase;
+            @media (min-width: $mobile-wide) {
+                float: right;
+                margin-top: -46px;
+                background-position: bottom right;
+            }
+        }
 
-            li
+
+        // Featured Products Slider
+        .slider {
+            overflow: hidden;
+            width: calc(100% - 50px);
+            margin: 25px;
+            .controls {
+                a {
+                    width: 23px;
+                    height: 57px;
+                    margin-top: 18%;
+                    background-size: 10px;
+                    @media (min-width: $tablet) {
+                        margin-top: 8%;
+                    }
+                    @media (min-width: $mobile-wide) {
+                        margin-top: 11%;
+                        background-size: inherit;
+                    }
+                    &.arrow-left {
+                        background: url(html_templates/images/btn_featured_slider_arrow_left.png) bottom left no-repeat;
+                        position: absolute;
+                        left: 0;
+                        cursor: pointer;
+                    }
+                    &.arrow-right {
+                        background: url(html_templates/images/btn_featured_slider_arrow_right.png) bottom right no-repeat;
+                        position: absolute;
+                        right: 0;
+                        cursor: pointer;
+                    }
+                }
+            }
+            ul {
+                @include wrap-stuff;
+                li {
+                    margin-right: 10px;
+                }
+                a {
+                    img {
+                        width: 100%;
+                        max-width: 265px;
+                    }
+                    p {
+                        color: $text-mid-grey;
+                        font-size: 14px;
+                        line-height: 18px;
+                        text-align: left;
+                        text-transform: uppercase;
+                        .price {
+                            font-weight: bold;
+                            display: block;
+                            margin-top: 5px;
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
+
+    // Branding Section
+    section.branding {
+        @include wrap-stuff;
+        article.direct {
+            @include transition(all 0.3s ease);
+            margin: 0 auto;
+            position: relative;
+            width: 100%;
+            max-width: 950px;
+            overflow: hidden;
+            @media (min-width: $tablet) {
+                width: 66%;
+            }
+            & > img {
+                width: 100%;
+            }
+            details {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                z-index: 555;
+                text-align: center;
+                color: $text-white;
+                text-shadow: 0 0 3px rgba(0, 0, 0, 0.74);
+                padding: 10%;
+                @media (max-width: $tablet) {
+                    padding: 6%;
+                }
+                & > h2 {
+                    font-size: 63px;
+                    letter-spacing: 3px;
+                    @media (max-width: $wrapper) {
+                        font-size: 4.35vw;
+                    }
+                    @media (max-width: $tablet) {
+                        font-size: 7.35vw;
+                    }
+                }
+                p {
+                    font-size: 17px;
+                    line-height: 35px;
+                    @media (max-width: $wrapper) {
+                        font-size: 1.15vw;
+                        line-height: 2.35vw;
+                    }
+                    @media (max-width: $tablet) {
+                        font-size: 2.5vw;
+                        line-height: 3.5vw;
+                    }
+                }
+                h3 {
+                    font-family: $avenir-medium;
+                    font-size: 17px;
+                    letter-spacing: 3px;
+                    @media (max-width: $wrapper) {
+                        font-size: 1.35vw;
+                    }
+                    @media (max-width: $tablet) {
+                        font-size: 2.35vw;
+                        line-height: 3.5vw;
+                    }
+                }
+                div {
+                    img {
+                        width: 10%;
+                        margin: 4% auto;
+                        max-width: 76px;
+                    }
+                    h2 {
+                        font-family: $futura-condensed-bold;
+                        font-size: 16px;
+                        letter-spacing: 1px;
+                        @media (max-width: $wrapper) {
+                            font-size: 1.35vw;
+                        }
+                        @media (max-width: $tablet) {
+                            font-size: 2.35vw;
+                        }
+
+                    }
+                }
+            }
+        }
+        article.reviews {
+            @include transition(all 0.3s ease);
+            width: 100%;
+            background: url(html_templates/images/branding_reviews_bg.gif) top left repeat-x;
+            border: 2px solid $off-white;
+            color: $text-dark-grey;
+            text-align: center;
+            @media (min-width: $tablet) {
+                width: 34%;
+                border-left: none;
+            }
+            ul {
+                li {
+                    h2 {
+                        font-size: 42px;
+                        margin: 5%;
+                        @media (max-width: $laptop) {
+                            font-size: 28px;
+                        }
+                    }
+                    div {
+                        display: inline-block;
+                        vertical-align: top;
+                        text-align: left;
+                        width: 40%;
+                        margin-left: 4%;
+                        div.rating {}
+                        h3 {
+                            font-size: 22px;
+                            margin-bottom: 4%;
+                        }
+                        p {
+                            font-family: $futura-light;
+                            font-size: 15px;
+                            line-height: 18px;
+                            margin-bottom: 5%;
+                        }
+                    }
+                    img {
+                        width: 48%;
+                        max-width: 241px;
+                        display: inline-block;
+                        @media (max-width: $laptop) {
+                            width: 40%;
+                        }
+                    }
+                    button {
+                        margin: 0 auto;
+                        width: 80%;
+                        max-width: 172px;
+                    }
+
+                }
+            }
+        }
+
+    }
+
+
+    // Bottom of Site Tagline Section
+    section.tagline {
+        height: 240px;
+        width: 100%;
+        display: table;
+        h2 {
+            font-family: $futura-light;
+            font-size: 30px;
+            letter-spacing: 7px;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
         }
     }
-    .articles {
-
-    }
-    .featured {
-
-    }
-    .branding {
-
-    }
-    .tagline {
-
-    }
-}
-
-@media(min-width: $wrapper) {
-
 }

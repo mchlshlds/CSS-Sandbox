@@ -1,6 +1,5 @@
 h1, h2, h3, h4, h5 {
-    font-family: 'FuturaStd-CondensedBold', Arial, sans-serif;
-    color: $text-dark-grey;
+    font-family: $futura-condensed-bold;
     text-transform: uppercase;
 }
 h1 {
@@ -19,7 +18,7 @@ h5 {
     font-size: 14px;
 }
 p {
-    color: $text-dark-grey;
+    font-family: $avenir-regular;
     font-size: 14px;
 }
 input {
@@ -31,7 +30,7 @@ button {
     color: $white;
     cursor: pointer;
     display: block;
-    font-family: "FuturaStd-Heavy",Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-family: $futura-heavy;
     font-size: 17px;
     letter-spacing: 1px;
     min-height: 50px;
@@ -75,4 +74,56 @@ th {
 tfoot {
 
 }
+a, a:active, a:link, a:visited, a:hover {
+    color: $text-dark-grey;
+    font-family: $avenir-medium;
+}
 
+
+.mobile-wide-hide, .tablet-hide, .laptop-hide, .wrapper-hide, .mobile-show {
+    display: inherit
+}
+
+.tablet-show, .laptop-show, .wrapper-show, .mobile-wide-show, .mobile-hide {
+    display: none
+}
+
+@media(min-width: $mobile-wide) {
+    .mobile-wide-hide {
+        display: none
+    }
+    .mobile-wide-show {
+        display: inherit
+    }
+}
+
+@media(min-width: $tablet) {
+    .tablet-hide {
+        display: none
+    }
+    .tablet-show {
+        display: block
+    }
+}
+
+@media(min-width: $laptop) {
+    .laptop-hide {
+        display: none
+    }
+    .laptop-show {
+        display: inherit;
+    }
+}
+
+@media(min-width: $wrapper) {
+    .wrapper-hide {
+        display: none
+    }
+    .wrapper-show {
+        display: inherit
+    }
+}
+
+*.unselectable {
+    @include user-select(none);
+}

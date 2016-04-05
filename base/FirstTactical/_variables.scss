@@ -1,12 +1,45 @@
-// Text
-$text-white: #F5F5F5;
+// **** START COLORS *** //
+
+//Text
 $text-light-grey: #CCC;
+$text-mid-grey: #717171;
 $text-dark-grey: #333;
 $text-black: #000;
+$text-white: #FFF;
 
-//Default Colors
+// Buttons
 $light-blue: #508b92;
 $dark-blue: #345a5e;
+
+// Backgrounds
+$light-grey: #eeeeee;
+$off-white: #F5F5F5;
+$transparent-black: rgba(0,0,0,0.8);
+
+//Standard
 $white: #FFF;
 $black: #000;
+
+// **** END COLORS *** //
+
+
+
+
+
+
+// **** START FONTS *** //
+
+// Futura
+$futura-condensed-bold: 'FuturaStd-CondensedBold',Arial,"Helvetica Neue",Helvetica,sans-serif;
+$futura-heavy: "FuturaStd-Heavy",Arial,"Helvetica Neue",Helvetica,sans-serif;
+$futura-medium: "futura-mediumregular",Arial,"Helvetica Neue",Helvetica,sans-serif;
+$futura-light: "FuturaStd-Light",Arial,"Helvetica Neue",Helvetica,sans-serif;
+
+    //Avenir
+$avenir-regular: "AvenirNext-Regular",Arial,"Helvetica Neue",Helvetica,sans-serif;
+$avenir-medium: "AvenirNext-Medium",Arial,"Helvetica Neue",Helvetica, sans-serif;
+$avenir-ultra-light: "AvenirNext-UltraLight",Arial,"Helvetica Neue",Helvetica,sans-serif;
+
+// **** END FONTS *** //
+
 
